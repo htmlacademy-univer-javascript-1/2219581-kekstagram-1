@@ -8,3 +8,6 @@ function getRandInt(intFrom, intTo){
 function checkStringLength(string, length){
   return string.length <= length;
 }
+
+getRandInt(1,2);
+checkStringLength('',1);
