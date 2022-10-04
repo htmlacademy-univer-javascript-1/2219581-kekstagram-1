@@ -59,6 +59,6 @@ const photo = {
   comments: MESSAGES[getRandInt(0, 1)]
 };
 
-//код, чтобы проверка не ругалась
+//код, чтобы проверка не ругалась.
 getRandInt(1,2);
 checkStringLength('',1);
