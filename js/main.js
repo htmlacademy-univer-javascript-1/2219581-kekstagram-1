@@ -33,14 +33,14 @@ const usersId = generateArray(25,25);
 function getId () {
   const temp = usersId[getRandInt(0,usersId.length-1)];
 
-  delete(temp);
+  delete(usersId[getRandInt(0,usersId.length-1)]);
   return temp;
 }
 
 function getPhotoId () {
   const temp = photosId[getRandInt(0,photosId.length-1)];
 
-  delete(temp);
+  delete(photosId[getRandInt(0,photosId.length-1)]);
   return temp;
 }
 
@@ -59,6 +59,6 @@ const photo = {
   comments: MESSAGES[getRandInt(0, 1)]
 };
 
-//код, чтобы проверка не ругалась.
+//код, чтобы проверка не ругалась
 getRandInt(1,2);
 checkStringLength('',1);
