@@ -24,8 +24,7 @@ const NAMES = [
 ];
 
 const generateArray = (length, max) => (
-  [...new Array(length)].map(() => Math.round(Math.random() * max))
-  );
+  [...new Array(length)].map(() => Math.round(Math.random() * max)));
 
 const photosId = generateArray(25,25);
 const usersId = generateArray(25,25);
@@ -43,14 +42,14 @@ function getPhotoId () {
   delete(photosId[getRandInt(0,photosId.length-1)]);
   return temp;
 }
-
+// eslint-disable-next-line no-unused-vars
 const comment = {
   id: getId(),
   avatar: `img/avatar-${ getRandInt(0, 5) }.svg`,
   message: MESSAGES[getRandInt(0, 1)],
   name: NAMES[getRandInt(0,NAMES.length-1)]
 };
-
+// eslint-disable-next-line no-unused-vars
 const photo = {
   id: getPhotoId(),
   url: `photos/${getPhotoId()}.jpg`,
