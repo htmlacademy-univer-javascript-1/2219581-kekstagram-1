@@ -1,4 +1,4 @@
 import { comment, photo } from './data';
 
-typeof(comment);
-typeof(photo);
+console.log(typeof(comment));
+console.log(typeof(photo));
