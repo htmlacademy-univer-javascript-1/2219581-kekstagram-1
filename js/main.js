@@ -1,4 +1,4 @@
 import { comment, photo } from './data';
 
-console.log(comment);
-console.log(photo);
+console.log(type(comment));
+console.log(type(photo));
