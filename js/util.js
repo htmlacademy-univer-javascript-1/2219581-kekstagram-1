@@ -9,7 +9,10 @@ function checkStringLength(string, length){
   return string.length <= length;
 }
 
-function getId () {
+const generateArray = (length, max) => (
+  [...new Array(length)].map(() => Math.round(Math.random() * max)));
+
+function getId (usersId) {
   const temp = usersId[getRandInt(0,usersId.length-1)];
 
   delete(usersId[getRandInt(0,usersId.length-1)]);
@@ -27,5 +30,6 @@ export{
   getRandInt,
   checkStringLength,
   getId,
-  getPhotoId
+  getPhotoId,
+  generateArray
 };
