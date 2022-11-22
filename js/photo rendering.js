@@ -1,3 +1,4 @@
+import { OpenBigPicture } from './big-picture.js';
 import {createPhotos} from './data.js';
 
 const photoTemplate = document.querySelector('#picture').textContent.querySelector('.picture');
@@ -19,3 +20,13 @@ photosArray.forEach((pictureData) => {
 });
 
 photoList.appendChild(photoListFragment);
+
+
+photoList.appendChild(photoListFragment);
+
+photoList.addEventListener('click', (evt) =>{
+  const target = evt.target;
+  if (target.nodeName === 'IMG'){
+    OpenBigPicture(JSON.parse(target.dataset.pictureData));
+  }
+});
