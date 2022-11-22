@@ -5,8 +5,8 @@ const photoList = document.querySelector('pictures');
 const photoListFragment = document.createDocumentFragment();
 const photosArray = createPhotos();
 
-photosArray.forEach(pictureData => {
-  const picture = pictureTemplate.cloneNode(true);
+photosArray.forEach((pictureData) => {
+  const picture = photoTemplate.cloneNode(true);
   const pictureImg = picture.querySelector('.picture__img');
 
   pictureImg.src = pictureData.url;
@@ -15,7 +15,7 @@ photosArray.forEach(pictureData => {
   picture.querySelector('.picture__comments').textContent = pictureData.comments.length.toString();
   picture.querySelector('.picture__likes').textContent = pictureData.likes;
 
-  pictureListFragment.appendChild(picture);
+  photoListFragment.appendChild(picture);
 });
 
 photoList.appendChild(photoListFragment);
