@@ -4,16 +4,16 @@ const bigPictureCloseButton = bigPicture.querySelector('.big-picture__cancel');
 function CloseBigPicture(){
   bigPicture.classList.add('hidden');
   document.body.classList.remove('modal-open');
-  bigPictureCloseButton.removeEventListener('click', closeBigPicture);
+  bigPictureCloseButton.removeEventListener('click', СloseBigPicture);
   document.removeEventListener('keydown', onPopupEscKeydown);
-};
+}
 
 function AddModalCloseHandlers(){
   bigPicture.classList.remove('hidden');
   document.body.classList.add('modal-open');
   bigPictureCloseButton.addEventListener('click', CloseBigPicture);
   document.addEventListener('keydown', onPopupEscKeydown);
-};
+}
 
 function OpenBigPicture(pictureData){
   AddModalCloseHandlers();
@@ -37,12 +37,12 @@ function OpenBigPicture(pictureData){
   });
   bigPicture.querySelector('.social__comment-count').classList.add('hidden');
   bigPicture.querySelector('.comments-loader').classList.add('hidden');
-};
+}
 
 function onPopupEscKeydown (evt) {
   if (evt.key === "Escape") {
     evt.preventDefault();
-    closeBigPicture();
+    СloseBigPicture();
   }
 }
 

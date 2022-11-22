@@ -27,6 +27,6 @@ photoList.appendChild(photoListFragment);
 photoList.addEventListener('click', (evt) =>{
   const target = evt.target;
   if (target.nodeName === 'IMG'){
-    OpenBigPicture(JSON.parse(target.dataset.pictureData))
+    OpenBigPicture(JSON.parse(target.dataset.pictureData));
   }
 });
