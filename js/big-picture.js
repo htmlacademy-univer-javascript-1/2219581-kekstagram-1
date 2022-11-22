@@ -1,7 +1,7 @@
 const bigPicture = document.querySelector('.big-picture');
 const bigPictureCloseButton = bigPicture.querySelector('.big-picture__cancel');
 
-function CloseBigPicture(){
+function СloseBigPicture(){
   bigPicture.classList.add('hidden');
   document.body.classList.remove('modal-open');
   bigPictureCloseButton.removeEventListener('click', СloseBigPicture);
@@ -11,7 +11,7 @@ function CloseBigPicture(){
 function AddModalCloseHandlers(){
   bigPicture.classList.remove('hidden');
   document.body.classList.add('modal-open');
-  bigPictureCloseButton.addEventListener('click', CloseBigPicture);
+  bigPictureCloseButton.addEventListener('click', СloseBigPicture);
   document.addEventListener('keydown', onPopupEscKeydown);
 }
 
@@ -40,7 +40,7 @@ function OpenBigPicture(pictureData){
 }
 
 function onPopupEscKeydown (evt) {
-  if (evt.key === "Escape") {
+  if (evt.key === 'Escape') {
     evt.preventDefault();
     СloseBigPicture();
   }
