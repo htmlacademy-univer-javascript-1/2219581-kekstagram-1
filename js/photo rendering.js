@@ -6,26 +6,27 @@ const photoList = document.querySelector('pictures');
 const photoListFragment = document.createDocumentFragment();
 const photosArray = createPhotos();
 
-photosArray.forEach(element => {
-    const picture = photoTemplate.cloneNode(true);
-    const pictureImg = picture.querySelector('.picture_img');
+photosArray.forEach((pictureData) => {
+  const picture = photoTemplate.cloneNode(true);
+  const pictureImg = picture.querySelector('.picture__img');
 
-    pictureImg.src = element.url
-    pictureImg.dataset.element = JSON.stringify(element);
+  pictureImg.src = pictureData.url;
+  pictureImg.dataset.pictureData = JSON.stringify(pictureData);
 
-    picture.querySelector('.picture__comments').textContent = element.comments.length.toString();
-    picture.querySelector('.picture__likes').textContent = element.likes;
+  picture.querySelector('.picture__comments').textContent = pictureData.comments.length.toString();
+  picture.querySelector('.picture__likes').textContent = pictureData.likes;
 
-    photoListFragment.appendChild(picture);
-
+  photoListFragment.appendChild(picture);
 });
+
+photoList.appendChild(photoListFragment);
+
 
 photoList.appendChild(photoListFragment);
 
 photoList.addEventListener('click', (evt) =>{
   const target = evt.target;
   if (target.nodeName === 'IMG'){
-    OpenBigPicture(JSON.parse(target.dataset.element))
+    OpenBigPicture(JSON.parse(target.dataset.pictureData))
   }
-
-})
+});
