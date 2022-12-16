@@ -5,10 +5,6 @@ function getRandInt(intFrom, intTo){
   return Math.round(intFrom - 0.5 + Math.random(intFrom, intTo) * (1 + intTo - intFrom));
 }
 
-function checkStringLength(string, length){
-  return string.length <= length;
-}
-
 const generateArray = (length, max) => (
   [...new Array(length)].map(() => Math.round(Math.random() * max)));
 
@@ -19,17 +15,7 @@ function getId (usersId) {
   return temp;
 }
 
-function getPhotoId (photosId) {
-  const temp = photosId[getRandInt(0,photosId.length-1)];
 
-  delete(photosId[getRandInt(0,photosId.length-1)]);
-  return temp;
-}
-
-export{
-  getRandInt,
-  checkStringLength,
-  getId,
-  getPhotoId,
-  generateArray
-};
+export {getRandInt,
+        generateArray,
+        getId};
