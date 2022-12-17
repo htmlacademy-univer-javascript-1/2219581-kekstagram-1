@@ -1,5 +1,5 @@
 import { uploadHashtagInput, clearHashtagsField } from './hashtag.js';
-
+import { pressEscape } from './util.js';
 
 const uploadingControl = document.querySelector('#upload-file');
 const uploadingOverlay = document.querySelector('.img-upload__overlay');
@@ -20,7 +20,7 @@ const clearForm = () => {
 };
 
 const onEscapeKeyDown = (evt) => {
-  if(evt.key === 'Escape' && !evt.target.classList.contains('text__hashtags') && !evt.target.classList.contains('text__description')) {
+  if(pressEscape(evt) && !evt.target.classList.contains('text__hashtags') && !evt.target.classList.contains('text__description')) {
     clearForm();
 
     document.removeEventListener('keydown', onEscapeKeyDown);
