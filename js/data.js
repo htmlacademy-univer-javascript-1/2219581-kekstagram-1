@@ -1,9 +1,6 @@
 import {getRandInt, getId, generateArray} from './util.js';
 
-const COUNT_PHOTO = 25;
-const COUNT_COMMENT = 10;
-const photosId = generateArray(25,25);
-const usersId = generateArray(25,25);
+  const COUNT_PHOTO = 25;
 
 const MESSAGES = [
   'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
