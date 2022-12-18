@@ -1,4 +1,4 @@
-import {debounce, shuffle} from './utils.js';
+import {debounce, shuffle} from './util.js';
 import {renderPictures, removePictures} from './photo-rendering.js';
 import {pictures} from './upload-data.js';
 
