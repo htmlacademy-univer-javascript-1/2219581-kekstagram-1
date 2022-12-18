@@ -35,4 +35,6 @@ const throttle = (array) => {
   return array;
 };
 
+
+
 export {getRandInt, generateArray, getId, pressEscape, debounce, throttle};
