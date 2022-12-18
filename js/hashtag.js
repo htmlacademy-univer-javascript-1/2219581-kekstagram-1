@@ -82,11 +82,9 @@ const uploadHashtagInput = () => {
   inputHashtag.addEventListener('input', onHashtagInput);
 };
 
-form.addEventListener('submit', (evt) => {
-  evt.preventDefault();
 
-  pristine.validate();
-});
+
+const checkFormValidation = () => pristine.validate();
 
 const clearHashtagsField = () => {
   inputHashtag.value = '';
@@ -94,4 +92,4 @@ const clearHashtagsField = () => {
   pristine.validate();
 };
 
-export {uploadHashtagInput, clearHashtagsField};
+export {uploadHashtagInput, clearHashtagsField, checkFormValidation};
