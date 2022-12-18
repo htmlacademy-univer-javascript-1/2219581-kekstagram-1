@@ -1,5 +1,5 @@
 import {uploadForm} from './upload-form.js';
-import {setData} from './upload-data.js';
+import {setData} from './connect-server.js';
 import {onRecieveSuccess, showUnloadingErrorMessage} from './upload-data.js';
 
 setData(onRecieveSuccess,
