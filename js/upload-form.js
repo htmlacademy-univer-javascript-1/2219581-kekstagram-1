@@ -1,4 +1,4 @@
-import {uploadHashtagInput, clearHashtagsField} from './hashtag.js';
+import {uploadHashtagInput, clearHashtagsField, checkFormValidation} from './hashtag.js';
 import {pressEscape} from './util.js';
 import {setScale} from './scaler.js';
 import {setEffects} from './effects.js';
