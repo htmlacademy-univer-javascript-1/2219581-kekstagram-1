@@ -4,6 +4,7 @@ import {setScale} from './scaler.js';
 import {setEffects} from './effects.js';
 import {setData} from './connect-server.js';
 import {addPostMessages, showSuccessMessage, closeMessage, showErrorMessage} from './post-message.js';
+import { uploadUserPicture} from './user-picture.js';
 
 const form = document.querySelector('.img-upload__form');
 
@@ -45,6 +46,8 @@ uploadingClose.addEventListener('click', closeForm);
 
 const onUploadClick = () => {
   document.addEventListener('keydown', onEscapeKeyDown);
+
+  uploadUserPicture(uploadingControl.files[0]);
 
   uploadingOverlay.classList.remove('hidden');
   document.querySelector('body').classList.add('modal-open');
