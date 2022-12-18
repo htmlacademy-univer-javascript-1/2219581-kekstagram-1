@@ -1,11 +1,11 @@
-import {setData} from './connect-server.js';
 import {uploadForm} from './upload-form.js';
-import {renderPictures} from './photo-rendering.js'
+import {setData} from './fetch.js';
+import {onRecieveSuccess, showUnloadingErrorMessage} from './upload-data.js';
 
-setData(renderPictures,
-    () => {
-        showUnloadingErrorMessage('Не удалось загрузить данные из сервера :(');
-    },
-    'GET');
+setData(onRecieveSuccess,
+  () => {
+    showUnloadingErrorMessage('Не удалось загрузить данные из сервера :(');
+  },
+  'GET');
 
 uploadForm();

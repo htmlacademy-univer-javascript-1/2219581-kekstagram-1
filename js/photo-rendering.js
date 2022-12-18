@@ -1,4 +1,4 @@
-import {addBigPicture} from './big-picture.js';
+import { addBigPicture } from './big-picture.js';
 
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 const pictures = document.querySelector('.pictures');
@@ -28,4 +28,11 @@ const renderPictures = (images) => {
   pictures.appendChild(picturesFragment);
 };
 
-export {renderPictures};
+const removePictures = () => {
+  const oldPictures = pictures.querySelectorAll('.picture');
+  oldPictures.forEach((p) => {
+    p.remove();
+  });
+};
+
+export {renderPictures, removePictures};
