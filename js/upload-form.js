@@ -1,14 +1,12 @@
-import {uploadHashtagInput, clearHashtagsField, checkFormValidation} from './hashtag.js';
+import {uploadHashtagInput, clearHashtagsField, checkFormValidation, form} from './hashtag.js';
 import {pressEscape} from './util.js';
-import {setScale} from './scaler.js';
+import {setScale, uploadingOverlay} from './scaler.js';
 import {setEffects} from './effects.js';
 import {setData} from './connect-server.js';
 import {addPostMessages, showSuccessMessage, closeMessage, showErrorMessage} from './post-message.js';
-
-const form = document.querySelector('.img-upload__form');
+import { uploadUserPicture} from './user-picture.js';
 
 const uploadingControl = form.querySelector('#upload-file');
-const uploadingOverlay = form.querySelector('.img-upload__overlay');
 const uploadingClose = form.querySelector('#upload-cancel');
 
 const uploadingComments = uploadingOverlay.querySelector('.text__description');
@@ -45,6 +43,8 @@ uploadingClose.addEventListener('click', closeForm);
 
 const onUploadClick = () => {
   document.addEventListener('keydown', onEscapeKeyDown);
+
+  uploadUserPicture(uploadingControl.files[0]);
 
   uploadingOverlay.classList.remove('hidden');
   document.querySelector('body').classList.add('modal-open');

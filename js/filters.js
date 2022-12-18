@@ -1,4 +1,4 @@
-import {debounce, shuffle} from './utils.js';
+import {debounce, throttle} from './util.js';
 import {renderPictures, removePictures} from './photo-rendering.js';
 import {pictures} from './upload-data.js';
 
@@ -14,7 +14,7 @@ const sortByCommentsCount = (firstItem, secondItem) => secondItem.comments.lengt
 
 const filters = {
   'filter-default': () => pictures.slice(),
-  'filter-random': () => shuffle(pictures.slice()).slice(0, MAX_RANDOM_FILTER_LENGTH),
+  'filter-random': () => throttle(pictures.slice()).slice(0, MAX_RANDOM_FILTER_LENGTH),
   'filter-discussed': () => pictures.slice().sort(sortByCommentsCount),
 };
 

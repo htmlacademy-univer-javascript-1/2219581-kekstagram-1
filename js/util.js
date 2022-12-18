@@ -26,17 +26,15 @@ function debounce (callback, timeoutDelay = 500) {
   };
 }
 
-function throttle (callback, delayBetweenFrames) {
-  let lastTime = 0;
+const throttle = (array) => {
+  for(let firstIndex = array.length - 1; firstIndex > 0; firstIndex--) {
+    const randomIndex = Math.floor(Math.random() * (firstIndex + 1));
+    [array[firstIndex], array[randomIndex]] = [array[randomIndex], array[firstIndex]];
+  }
 
-  return (...rest) => {
-    const now = new Date();
+  return array;
+};
 
-    if (now - lastTime >= delayBetweenFrames) {
-      callback.apply(this, rest);
-      lastTime = now;
-    }
-  };
-}
+
 
 export {getRandInt, generateArray, getId, pressEscape, debounce, throttle};

@@ -1,4 +1,4 @@
-import {renderPictures} from './renderer.js';
+import {renderPictures} from './photo-rendering.js';
 import {showFilters} from './filters.js';
 
 const ERROR_Z_POSITION = 100;
