@@ -1,11 +1,11 @@
   // eslint-disable-next-line no-unused-vars
-const Urls = {
+const URL = {
     'GET': 'https://26.javascript.pages.academy/kekstagram/data',
     'POST': 'https://26.javascript.pages.academy/kekstagram'
   };
 
 const setData = (onSuccess, onFail, method, body) => {
-    fetch(Urls[method], {
+    fetch(URL[method], {
       method: method,
       body
     })

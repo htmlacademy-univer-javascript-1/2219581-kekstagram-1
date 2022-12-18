@@ -20,19 +20,19 @@ let errorMessage = '';
 const getErrorMessage = () => errorMessage;
 
 const hashtagErrorHandler = (value) => {
-    errorMessage = '';
+  errorMessage = '';
 
-    const hashtagInputText = value.toLowerCase().trim();
-    if(hashtagInputText.length === 0){
-        return true;
+  const hashtagInputText = value.toLowerCase().trim();
+  if(hashtagInputText.length === 0){
+    return true;
   }
 
-const hashtagTexts = hashtagInputText.split(/\s+/);
-    if(hashtagTexts.length === 0) {
-        return true;
-    }
+  const hashtagTexts = hashtagInputText.split(/\s+/);
+  if(hashtagTexts.length === 0) {
+    return true;
+  }
 
-const inputRules = [
+  const inputRules = [
     {
       rule: hashtagTexts.some((text) => text.indexOf('#', 1) > 0),
       error: 'Хэш-теги должны разделяться пробелами'
@@ -75,19 +75,19 @@ const inputRules = [
 pristine.addValidator(inputHashtag, hashtagErrorHandler, getErrorMessage, 2, false);
 
 const onHashtagInput = () => {
-    submitButton.disabled = !pristine.validate();
+  submitButton.disabled = !pristine.validate();
 };
 
 const uploadHashtagInput = () => {
-    inputHashtag.addEventListener('input', onHashtagInput);
+  inputHashtag.addEventListener('input', onHashtagInput);
 };
 
 const checkFormValidation = () => pristine.validate();
 
 const clearHashtagsField = () => {
-    inputHashtag.value = '';
+  inputHashtag.value = '';
 
-    pristine.validate();
+  pristine.validate();
 };
 
 export {uploadHashtagInput, clearHashtagsField, checkFormValidation};
